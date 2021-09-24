@@ -12,6 +12,13 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/Ian74122/bank_card_cn_query"
   s.licenses = "MIT"
 
-  s.date = %q{2021-09-24}
-  s.files = ["lib/bank_card_cn_query.rb"]
+  s.files = Dir.chdir(File.expand_path('..', __FILE__)) do
+              `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+            end
+
+  s.require_paths = ["lib"]
+  s.files = Dir["{app,config,lib}/**/*", "CHANGELOG.md", "LICENSE", "README.md"]
+
+  s.add_development_dependency "bundler", "~> 2.2.17"
+  s.add_development_dependency "rest-client", "~> 2.1"
 end

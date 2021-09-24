@@ -23,15 +23,14 @@ module BankCardCnQuery
       1001 # 服务异常，会返回具体原因
     ].freeze
 
-    attr_reader :myqcloud_config, :url, :secret_id, :secret_key, :source, :datetime
+    attr_reader :url, :secret_id, :secret_key, :source, :datetime
     attr_accessor :errors
 
     def initialize(code = :myqcloud)
-      @myqcloud_config = Rails.application.config_for(:settings)[code.to_sym]
-      @url = myqcloud_config[:url]
-      @secret_id = myqcloud_config[:secret_id]
-      @secret_key = myqcloud_config[:secret_key]
-      @source = myqcloud_config[:source]
+      @url = BankCardCnQuery.url
+      @secret_id = BankCardCnQuery.secret_id
+      @secret_key = BankCardCnQuery.secret_key
+      @source = BankCardCnQuery.source
       @datetime = Time.now.httpdate # 格式 "Thu, 23 Sep 2021 03:30:24 GMT"
       @errors = {}
     end
