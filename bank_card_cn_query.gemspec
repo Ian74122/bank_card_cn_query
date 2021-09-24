@@ -19,6 +19,6 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.files = Dir["{app,config,lib}/**/*", "CHANGELOG.md", "LICENSE", "README.md"]
 
-  s.add_development_dependency "bundler", "~> 2.2.17"
-  s.add_development_dependency "rest-client", "~> 2.1"
+  s.add_dependency "bundler", "~> 1.17"
+  s.add_dependency "rest-client", "~> 2.1"
 end
