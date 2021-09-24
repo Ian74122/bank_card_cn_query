@@ -6,7 +6,7 @@ check bank card info
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'bank_card_cn_query',git: 'https://github.com/Ian74122/bank_card_cn_query'
+gem 'bank_card_cn_query', git: 'https://github.com/Ian74122/bank_card_cn_query'
 ```
 
 And then execute:
@@ -22,5 +22,5 @@ adjust /config/initializers/bank_card_cn_query.rb
 
 - Check China Bank Card Info
 ```ruby
-BankCardCnQuery::Check.check_bank_info(card_number)
+BankCardCnQuery::Check.new.check_bank_info(card_number)
 ```
